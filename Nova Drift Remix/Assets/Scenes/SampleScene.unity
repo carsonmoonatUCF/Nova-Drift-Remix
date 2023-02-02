@@ -645,7 +645,6 @@ MonoBehaviour:
   worldMousePosition: {x: 0, y: 0, z: 0}
   shooting: 0
   thrusters: 0
-  health: {fileID: 1933490888}
 --- !u!114 &1933490886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,4 +690,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldPoints: 50
-  chasisPoints: 100
+  chassisPoints: 0
