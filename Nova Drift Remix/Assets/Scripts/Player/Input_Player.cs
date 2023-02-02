@@ -12,6 +12,7 @@ public class Input_Player : MonoBehaviour
     // Main Camera
     Camera cam = null;
 
+    // Input Values
     [Header("Player Input Containers")]
     [SerializeField] private Vector3 worldMousePosition = Vector2.zero;
     [SerializeField] private bool shooting = false;
