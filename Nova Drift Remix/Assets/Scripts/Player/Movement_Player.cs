@@ -29,6 +29,7 @@ public class Movement_Player : MonoBehaviour
     [Header("Shooting")]
     public Transform shotPoint = null;
     public GameObject projectile = null;
+    public float projectileDamage = 0.0f;
     private bool firstShot = false;
     public float shotCooldown = 0.0f;
     private float cooldown = 0.0f;
@@ -72,7 +73,7 @@ public class Movement_Player : MonoBehaviour
     private void PlayerShooting(){
         if(inputPlayer.GetShooting()){
             if(!firstShot){
-                Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+                CreateProjectile();
                 firstShot = true;
                 cooldown = shotCooldown;
             }
@@ -80,13 +81,19 @@ public class Movement_Player : MonoBehaviour
             cooldown -= Time.deltaTime;
 
             if(cooldown <= 0){
-                Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+                CreateProjectile();
                 cooldown = shotCooldown;
             }  
         }else{
             firstShot = false;
             cooldown = shotCooldown;
         }
+    }
+
+    // Handles instantiating the projectile at the shot point.
+    private void CreateProjectile(){
+        GameObject currentProjectile = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+        currentProjectile.GetComponent<Damage_Projectile>().SetDamage(projectileDamage);
     }
     
 }
