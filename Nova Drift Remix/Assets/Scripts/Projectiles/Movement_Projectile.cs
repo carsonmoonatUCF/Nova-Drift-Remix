@@ -13,7 +13,7 @@ public class Movement_Projectile : MonoBehaviour
 
     // Destroy the projectile if it does not hit anything after 3 seconds!
     private void Awake() {
-        Destroy(this.gameObject, 2f);
+        Destroy(this.gameObject, 3f);
     }
 
     // Moves the projectile on its up axis.
