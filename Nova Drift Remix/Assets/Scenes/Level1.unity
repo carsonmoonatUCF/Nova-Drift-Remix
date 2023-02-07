@@ -665,6 +665,7 @@ MonoBehaviour:
   projectile: {fileID: 8581992333297640916, guid: 5c4f6d5e50004b640b74d5e497816ee5, type: 3}
   projectileDamage: 5
   shotCooldown: 0.18
+  test: {fileID: 1933490888}
 --- !u!114 &1933490887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,8 +692,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba4471cda5400546aa2f95939279c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldPoints: 50
-  chassisPoints: 100
+  maxShieldPoints: 50
+  shieldPoints: 0
+  maxChassisPoints: 100
+  chassisPoints: 0
+  regenRate: 5
+  regenTimerLength: 5
+  regenTimer: 0
 --- !u!114 &1933490889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,7 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291525be029fbe54dbaf2f3d69379fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageScaler: 3
+  damageScaler: 10
 --- !u!1001 &4482443385904475811
 PrefabInstance:
   m_ObjectHideFlags: 0
