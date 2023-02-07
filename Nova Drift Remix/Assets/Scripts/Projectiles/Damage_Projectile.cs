@@ -8,6 +8,10 @@ public class Damage_Projectile : MonoBehaviour
     [Header("Damage")]
     private float damage = 0.0f;
 
+    // Push force
+    [Header("Force")]
+    public float pushForce = 0.0f;
+
 
     // Set projectile damage.
     public void SetDamage(float dmg){
@@ -18,6 +22,8 @@ public class Damage_Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.transform.CompareTag("Cookie")){
             other.GetComponent<Health_Cookie>().TakeDamage(damage);
+
+            other.GetComponent<Rigidbody2D>().AddForce((other.transform.position - transform.position) * pushForce, ForceMode2D.Impulse);
         }
 
         Destroy(this.gameObject);
