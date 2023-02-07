@@ -11,6 +11,7 @@ public class Entrance_Cookie : MonoBehaviour
 
     // Entrance Force
     public float entranceForce = 0.0f;
+    public float entranceTorque = 0.0f;
 
     // Scale
     public float minScale = 0.0f;
@@ -28,7 +29,7 @@ public class Entrance_Cookie : MonoBehaviour
 
         // Start with random force and torque.
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(Random.Range(4, 8) * (Vector3.up + Vector3.right), ForceMode2D.Impulse);
-        rb.AddTorque(Random.Range(0, 10));
+        rb.AddForce(Random.Range(entranceForce / 2, entranceForce) * (Vector3.up + Vector3.right), ForceMode2D.Impulse);
+        rb.AddTorque(Random.Range(-entranceTorque, entranceTorque));
     }
 }

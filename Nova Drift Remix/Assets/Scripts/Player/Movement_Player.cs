@@ -34,8 +34,6 @@ public class Movement_Player : MonoBehaviour
     public float shotCooldown = 0.0f;
     private float cooldown = 0.0f;
 
-    public Health_Player test;
-
 
     // Get components at runtime.
     private void Awake() {
@@ -75,7 +73,6 @@ public class Movement_Player : MonoBehaviour
     private void PlayerShooting(){
         if(inputPlayer.GetShooting()){
             if(!firstShot){
-                test.TakeDamage(12);
                 CreateProjectile();
                 firstShot = true;
                 cooldown = shotCooldown;
