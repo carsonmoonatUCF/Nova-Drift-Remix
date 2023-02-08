@@ -24,17 +24,24 @@ public class Movement_Enemy : MonoBehaviour
 
     // Shooting
     [Header("Shooting")]
-    public float shotCooldown = 0.0f;
+    public Transform[] shotPositions = null;
+    public GameObject enemyProjectile = null;
+    public float shotCooldownLength = 0.0f;
+    private float shotCooldown = 0.0f;
 
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<Movement_Player>().transform;
+        shotCooldown = shotCooldownLength;
     }
 
     private void Update() {
         ForwardMovement();
         Rotation();
+        Fire();
+
+        shotCooldown -= Time.deltaTime;
     }
 
     // Handles Enemy forward thrust
@@ -57,5 +64,14 @@ public class Movement_Enemy : MonoBehaviour
     // Handles Enemy shooting
     private void Fire(){
 
+        if(shotCooldown <= 0.0f){
+
+            for(int i=0; i<shotPositions.Length; i++){
+                Instantiate(enemyProjectile, shotPositions[i].transform.position, shotPositions[i].transform.rotation);
+            }
+
+            shotCooldown = shotCooldownLength;
+        }
+        
     }
 }
