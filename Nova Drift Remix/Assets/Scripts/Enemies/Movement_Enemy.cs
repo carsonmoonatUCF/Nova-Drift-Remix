@@ -25,6 +25,7 @@ public class Movement_Enemy : MonoBehaviour
     // Shooting
     [Header("Shooting")]
     public Transform[] shotPositions = null;
+    public Transform shotTarget = null;
     public GameObject enemyProjectile = null;
     public float shotCooldownLength = 0.0f;
     private float shotCooldown = 0.0f;
@@ -67,7 +68,9 @@ public class Movement_Enemy : MonoBehaviour
         if(shotCooldown <= 0.0f){
 
             for(int i=0; i<shotPositions.Length; i++){
-                Instantiate(enemyProjectile, shotPositions[i].transform.position, shotPositions[i].transform.rotation);
+                GameObject currentProjectile = Instantiate(enemyProjectile, shotPositions[i].transform.position, shotPositions[i].transform.rotation);
+                currentProjectile.GetComponent<Damage_EnemyProjectile>().SetDamage(25);
+                currentProjectile.GetComponent<Movement_EnemyProjectile>().GetShotTarget(shotTarget.position);
             }
 
             shotCooldown = shotCooldownLength;

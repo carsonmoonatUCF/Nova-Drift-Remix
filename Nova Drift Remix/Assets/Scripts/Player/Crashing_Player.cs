@@ -28,6 +28,8 @@ public class Crashing_Player : MonoBehaviour
         // Deal damage.
         if(other.gameObject.CompareTag("Cookie")){
             other.transform.GetComponent<Health_Cookie>().TakeDamage(rb.velocity.magnitude * damageScaler * 2);
+        }else if(other.gameObject.CompareTag("Enemy")){
+            other.transform.GetComponent<Health_Enemy>().TakeDamage(rb.velocity.magnitude * damageScaler * 2);
         }
 
         // Take damage.
