@@ -17,6 +17,7 @@ public class Input_Player : MonoBehaviour
     [SerializeField] private Vector3 worldMousePosition = Vector2.zero;
     [SerializeField] private bool shooting = false;
     [SerializeField] private bool thrusters = false;
+    [SerializeField] private bool blinking = false;
 
 
     // Get input actions and assign inputs
@@ -31,6 +32,9 @@ public class Input_Player : MonoBehaviour
 
         controls.Gameplay.Thrust.started += ctx => OnThrust();
         controls.Gameplay.Thrust.canceled += ctx => StopThrust();
+
+        controls.Gameplay.Blink.started += ctx => OnBlink();
+        controls.Gameplay.Blink.canceled += ctx => StopBlink();
     }
 
 
@@ -56,6 +60,14 @@ public class Input_Player : MonoBehaviour
         thrusters = false;
     }
 
+    private void OnBlink(){
+        blinking = true;
+    }
+
+    private void StopBlink(){
+        blinking = false;
+    }
+
 
     // Get Input
     public Vector3 GetMousePosition(){
@@ -68,6 +80,10 @@ public class Input_Player : MonoBehaviour
 
     public bool GetShooting(){
         return shooting;
+    }
+
+    public bool GetBlinking(){
+        return blinking;
     }
 
 
