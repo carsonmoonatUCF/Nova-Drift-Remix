@@ -12,9 +12,6 @@ public class Movement_Player : MonoBehaviour
     // Player Rigidbody2D
     Rigidbody2D rb = null;
 
-    // Player Camera
-    Camera cam = null;
-
     // Player Rotation
     [Header("Rotation")]
     public float rotationSpeed = 0.0f;
@@ -39,7 +36,6 @@ public class Movement_Player : MonoBehaviour
     private void Awake() {
         inputPlayer = GetComponent<Input_Player>();
         rb = GetComponent<Rigidbody2D>();
-        cam = Camera.main;
     }
 
     // Run functions
