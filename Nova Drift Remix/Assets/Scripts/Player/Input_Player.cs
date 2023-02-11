@@ -18,12 +18,12 @@ public class Input_Player : MonoBehaviour
     [SerializeField] private bool shooting = false;
     [SerializeField] private bool thrusters = false;
     [SerializeField] private bool blinking = false;
+    [SerializeField] private bool turret = false;
 
 
     // Get input actions and assign inputs
     private void Awake() {
         controls = new PlayerControls();
-        cam = Camera.main;
 
         controls.Gameplay.MousePosition.performed += ctx => ReceiveMousePosition(ctx.ReadValue<Vector2>());
 
@@ -35,12 +35,16 @@ public class Input_Player : MonoBehaviour
 
         controls.Gameplay.Blink.started += ctx => OnBlink();
         controls.Gameplay.Blink.canceled += ctx => StopBlink();
+
+        controls.Gameplay.Turret.started += ctx => OnTurret();
+        controls.Gameplay.Turret.canceled += ctx => StopTurret();
     }
 
 
     // Receive input from player.
     private void ReceiveMousePosition(Vector2 ctx){
         Vector3 fixedMousePos = new Vector3(ctx.x, ctx.y, 1f);
+        cam = Camera.main;
         worldMousePosition = cam.ScreenToWorldPoint(fixedMousePos);
     }
 
@@ -68,6 +72,14 @@ public class Input_Player : MonoBehaviour
         blinking = false;
     }
 
+    private void OnTurret(){
+        turret = true;
+    }
+
+    private void StopTurret(){
+        turret = false;
+    }
+
 
     // Get Input
     public Vector3 GetMousePosition(){
@@ -84,6 +96,10 @@ public class Input_Player : MonoBehaviour
 
     public bool GetBlinking(){
         return blinking;
+    }
+
+    public bool GetTurret(){
+        return turret;
     }
 
 

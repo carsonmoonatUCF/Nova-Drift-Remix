@@ -24,11 +24,14 @@ public class Halo_Upgrade : MonoBehaviour
     private Transform player = null;
 
 
+    // This object must persist between scenes.
     private void Awake() {
         damageCooldown = damageRate;
 
         playerHealth = FindObjectOfType<Health_Player>();
         player = playerHealth.gameObject.transform;
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update() {
