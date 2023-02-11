@@ -53,6 +53,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Turret"",
+                    ""type"": ""Button"",
+                    ""id"": ""66f43fe6-d847-4081-b49b-da081d9d3fa3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Blink"",
+                    ""type"": ""Button"",
+                    ""id"": ""0b09dd19-ed9b-43e9-84b7-fdc25c88c83a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -110,6 +128,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Thrust"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""27dd1807-4a81-4004-b674-dc753ca62657"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Turret"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6214ba3e-e47e-4997-ba16-6fd1474f5134"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Blink"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -121,6 +161,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Gameplay_MousePosition = m_Gameplay.FindAction("Mouse Position", throwIfNotFound: true);
         m_Gameplay_Shoot = m_Gameplay.FindAction("Shoot", throwIfNotFound: true);
         m_Gameplay_Thrust = m_Gameplay.FindAction("Thrust", throwIfNotFound: true);
+        m_Gameplay_Turret = m_Gameplay.FindAction("Turret", throwIfNotFound: true);
+        m_Gameplay_Blink = m_Gameplay.FindAction("Blink", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -183,6 +225,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_MousePosition;
     private readonly InputAction m_Gameplay_Shoot;
     private readonly InputAction m_Gameplay_Thrust;
+    private readonly InputAction m_Gameplay_Turret;
+    private readonly InputAction m_Gameplay_Blink;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -190,6 +234,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @MousePosition => m_Wrapper.m_Gameplay_MousePosition;
         public InputAction @Shoot => m_Wrapper.m_Gameplay_Shoot;
         public InputAction @Thrust => m_Wrapper.m_Gameplay_Thrust;
+        public InputAction @Turret => m_Wrapper.m_Gameplay_Turret;
+        public InputAction @Blink => m_Wrapper.m_Gameplay_Blink;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -208,6 +254,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Thrust.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnThrust;
                 @Thrust.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnThrust;
                 @Thrust.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnThrust;
+                @Turret.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTurret;
+                @Turret.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTurret;
+                @Turret.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnTurret;
+                @Blink.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBlink;
+                @Blink.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBlink;
+                @Blink.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnBlink;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -221,6 +273,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Thrust.started += instance.OnThrust;
                 @Thrust.performed += instance.OnThrust;
                 @Thrust.canceled += instance.OnThrust;
+                @Turret.started += instance.OnTurret;
+                @Turret.performed += instance.OnTurret;
+                @Turret.canceled += instance.OnTurret;
+                @Blink.started += instance.OnBlink;
+                @Blink.performed += instance.OnBlink;
+                @Blink.canceled += instance.OnBlink;
             }
         }
     }
@@ -230,5 +288,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMousePosition(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnThrust(InputAction.CallbackContext context);
+        void OnTurret(InputAction.CallbackContext context);
+        void OnBlink(InputAction.CallbackContext context);
     }
 }

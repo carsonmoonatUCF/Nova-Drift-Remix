@@ -6,7 +6,7 @@ public class Damage_Projectile : MonoBehaviour
 {
     // Damage
     [Header("Damage")]
-    private float damage = 0.0f;
+    public float damage = 0.0f;
 
     // Push force
     [Header("Force")]
