@@ -8,16 +8,48 @@ public class Health_Boss : MonoBehaviour
 {
     // Boss Health
     [Header("Health")]
-    public float health = 0.0f;
+    public float maxHealth = 0.0f;
+    public float currentHealth = 0.0f;
 
+    // Taking Damage
+    [Header("Damage")]
+    public float damageFlash = 0.0f;
+
+    // Angry
+    [Header("Angry")]
+    public bool angry = false;
+    public SpriteRenderer spriteRen = null;
+    public Sprite angrySprite = null;
+
+
+    // Set health to max.
+    private void Awake() {
+        currentHealth = maxHealth;
+
+
+    }
 
     private void Update() {
-        if(health <= 0){
-            // Die!
+        if(currentHealth <= maxHealth / 2){
+            SwitchToAngry();
+        }
+
+        if(currentHealth <= 0){
+            Destroy(this.gameObject);
         }
     }
 
     public void TakeDamage(float amount){
-        health -= amount;
+        currentHealth -= amount;
+    }
+
+    private void SwitchToAngry(){
+        angry = true;
+
+        spriteRen.sprite = angrySprite;
+    }
+
+    public bool GetAngry(){
+        return angry;
     }
 }

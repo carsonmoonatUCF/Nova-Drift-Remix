@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 399847968}
   - component: {fileID: 399847969}
   - component: {fileID: 399847970}
+  - component: {fileID: 399847971}
   m_Layer: 11
   m_Name: Boss
   m_TagString: Untagged
@@ -152,8 +153,8 @@ Transform:
   m_GameObject: {fileID: 399847965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1653521236}
   - {fileID: 1334262790}
@@ -220,7 +221,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106960f0204b72742a006a73544e9d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 38
+  maxHealth: 300
+  currentHealth: 0
+  damageFlash: 0
+  angry: 0
+  spriteRen: {fileID: 1653521237}
+  angrySprite: {fileID: 21300000, guid: f3b9d361db7cbc24ca324cd2fcfa9328, type: 3}
 --- !u!114 &399847970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +249,21 @@ MonoBehaviour:
   attackRate: 0.09
   attackRateCooldown: 0
   projectile: {fileID: 1856419691524975508, guid: d4cf8ce62079d8d4d9e3e4d6b5d0d091, type: 3}
+--- !u!114 &399847971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399847965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 175381d1a7584e14aac0fcb3c09afab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 2
+  distance: 2
+  spriteRen: {fileID: 1653521237}
 --- !u!1001 &487679301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -298,6 +319,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7269943347530413407, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: xBound
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
 --- !u!1 &610256440
@@ -336,7 +361,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -545,9 +570,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 1961d14b61532f942a3fab4e6bb0df7f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

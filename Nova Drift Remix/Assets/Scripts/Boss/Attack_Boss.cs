@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Attack_Boss : MonoBehaviour
 {
+    // Boss Health Script
+    private Health_Boss bossHealth = null;
+
     // Boss Regular Attack
     [Header("Regular Attack Pattern")]
     public Transform attackPosition = null;
@@ -26,6 +29,8 @@ public class Attack_Boss : MonoBehaviour
 
     private void Awake() {
         attackCooldown = -5;
+
+        bossHealth = GetComponent<Health_Boss>();
     }
 
     private void Update() {
@@ -36,11 +41,12 @@ public class Attack_Boss : MonoBehaviour
             RegularAttack();
         }
 
-        if(attackCooldown <= -8){
+        if(attackCooldown <= -8 || bossHealth.GetAngry()){
             attackCooldown = startAttackCooldown;
         }
 
-        attackCooldown -= Time.deltaTime;
+        if(!bossHealth.GetAngry())
+            attackCooldown -= Time.deltaTime;
     }
 
     private void RegularAttack(){
