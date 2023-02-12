@@ -131,7 +131,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 300
   currentHealth: 0
-  damageFlash: 0
   angry: 0
   spriteRen: {fileID: 8132462153975691280}
   angrySprite: {fileID: 21300000, guid: f3b9d361db7cbc24ca324cd2fcfa9328, type: 3}

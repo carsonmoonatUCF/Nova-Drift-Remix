@@ -11,10 +11,6 @@ public class Health_Boss : MonoBehaviour
     public float maxHealth = 0.0f;
     public float currentHealth = 0.0f;
 
-    // Taking Damage
-    [Header("Damage")]
-    public float damageFlash = 0.0f;
-
     // Angry
     [Header("Angry")]
     public bool angry = false;
@@ -25,8 +21,6 @@ public class Health_Boss : MonoBehaviour
     // Set health to max.
     private void Awake() {
         currentHealth = maxHealth;
-
-
     }
 
     private void Update() {
