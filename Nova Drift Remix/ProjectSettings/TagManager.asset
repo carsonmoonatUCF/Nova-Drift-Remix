@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Cookie
   - Enemy
+  - Weak Point
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - Enemy Projectile
   - Enemy
   - No Projectiles
-  - 
-  - 
+  - Boss
+  - Boss Projectile
   - 
   - 
   - 
