@@ -40,6 +40,10 @@ public class Health_Player : MonoBehaviour
             }
         }
 
+        if(chassisPoints <= 0){
+            Destroy(gameObject);
+        }
+
         regenTimer -= Time.deltaTime;
     }
 

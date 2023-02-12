@@ -177,7 +177,7 @@ MonoBehaviour:
   shieldPoints: 0
   maxChassisPoints: 100
   chassisPoints: 0
-  regenRate: 5
+  regenRate: 10
   regenTimerLength: 5
   regenTimer: 0
 --- !u!114 &7269943347530413393
