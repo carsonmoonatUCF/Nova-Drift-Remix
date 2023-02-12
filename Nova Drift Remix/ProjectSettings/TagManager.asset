@@ -46,3 +46,6 @@ TagManager:
   - name: Background MainMenu
     uniqueID: 3615639429
     locked: 0
+  - name: ProjectileLayer
+    uniqueID: 2440495875
+    locked: 0
