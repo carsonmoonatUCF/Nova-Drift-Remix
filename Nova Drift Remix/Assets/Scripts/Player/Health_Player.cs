@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Player health, diveded between shield and chassis health.
 
@@ -47,8 +48,10 @@ public class Health_Player : MonoBehaviour
             }
         }
 
+        //load lose scene
         if(chassisPoints <= 0){
             Destroy(gameObject);
+            SceneManager.LoadScene(3);
         }
 
         regenTimer -= Time.deltaTime;
@@ -101,6 +104,7 @@ public class Health_Player : MonoBehaviour
 
         if(chassisPoints > maxChassisPoints){
             chassisPoints = maxChassisPoints;
-        }      
+        }
+
     }
 }
