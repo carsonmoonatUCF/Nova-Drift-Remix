@@ -266,8 +266,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\nTurret Upgrade\nPress V to place a turret that locks \ndown a position\nand
-    attacks enemeis"
+  m_text: "\nTurret Upgrade\nPress Z to place a turret that locks \ndown a position\nand
+    attacks enemies"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1017,7 +1017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &378685981
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1031,18 +1031,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00735873, y: -0.4120884}
+  m_Offset: {x: -0.12928772, y: -0.0026044846}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 1.5625, y: 0.78125, z: 1.5625, w: 0.78125}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.52, y: 3.52}
+    oldSize: {x: 25, y: 25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0162892, y: 2.7660923}
+  m_Size: {x: 21.359978, y: 23.412447}
   m_EdgeRadius: 0
 --- !u!50 &378685982
 Rigidbody2D:
@@ -1106,7 +1106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ac8cc92e197947e4e8ca7a151b0932e5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07cb072791eadf849bcf6c70885dcf05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1125,8 +1125,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378685980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3729444, y: 0.3729444, z: 0.3729444}
+  m_LocalPosition: {x: 5.17, y: 2.97, z: 0}
+  m_LocalScale: {x: 0.08264637, y: 0.08264637, z: 0.08264637}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2590,6 +2590,74 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Time
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime1
+      value: 33539
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime2
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime3
+      value: 59174
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime4
+      value: 59945
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.07404297
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.04111779
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.69758016
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.9056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.35372016
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.key4.b
+      value: 0.99673635
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.key4.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.key4.r
+      value: 0.90943396
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_NumAlphaKeys
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1919821613, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_NumColorKeys
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7269943347530413401, guid: 5e19da22d492a6c4195b5e4980774d82, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2893,7 +2961,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\nBlink\nPress B to teleport\na short distance \npassing through \nenemies
+  m_text: "\nBlink\nPress X to teleport\na short distance \npassing through \nenemies
     and projectiles"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
