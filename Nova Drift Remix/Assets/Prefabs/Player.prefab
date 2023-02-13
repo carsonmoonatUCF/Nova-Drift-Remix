@@ -149,7 +149,7 @@ MonoBehaviour:
   projectile: {fileID: 8581992333297640916, guid: 5c4f6d5e50004b640b74d5e497816ee5, type: 3}
   projectileDamage: 5
   shotCooldown: 0.18
-  playerShootEffect: {fileID: 8300000, guid: 00bae9b9d35d909418501d8474ac14c9, type: 3}
+  playerShootEffect: {fileID: 8300000, guid: 671b317246a346e40a9b45eb6c964ff8, type: 3}
 --- !u!114 &7269943347530413407
 MonoBehaviour:
   m_ObjectHideFlags: 0

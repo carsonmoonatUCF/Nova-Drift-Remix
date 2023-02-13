@@ -97,6 +97,7 @@ public class Movement_Player : MonoBehaviour
         GameObject currentProjectile = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
         currentProjectile.GetComponent<Damage_Projectile>().SetDamage(projectileDamage);
         aSource.clip = playerShootEffect;
+        aSource.volume = .3f;
         aSource.Play();
     }
     

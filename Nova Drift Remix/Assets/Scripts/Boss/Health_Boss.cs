@@ -17,10 +17,20 @@ public class Health_Boss : MonoBehaviour
     public SpriteRenderer spriteRen = null;
     public Sprite angrySprite = null;
 
+    // Sound Effects
+    [Header("Sound Effects")]
+    private AudioSource aSource = null;
+
+    // Boss Explosion
+    [Header("Boss Explosion")]
+    public GameObject bossExplosion;
+
 
     // Set health to max.
     private void Awake() {
         currentHealth = maxHealth;
+
+        aSource = GetComponent<AudioSource>();
     }
 
     private void Update() {
@@ -29,12 +39,17 @@ public class Health_Boss : MonoBehaviour
         }
 
         if(currentHealth <= 0){
+            GameObject explosion = Instantiate(bossExplosion, transform.position, transform.rotation);
+            Destroy(explosion, 4f);
+
             Destroy(this.gameObject);
         }
     }
 
     public void TakeDamage(float amount){
         currentHealth -= amount;
+
+        aSource.Play();
     }
 
     private void SwitchToAngry(){

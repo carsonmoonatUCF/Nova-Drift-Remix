@@ -30,11 +30,17 @@ public class Movement_Enemy : MonoBehaviour
     public float shotCooldownLength = 0.0f;
     private float shotCooldown = 0.0f;
 
+    // Sound Effects
+    [Header("Sound Effects")]
+    public AudioClip enemyShootEffect = null;
+    private AudioSource aSource = null;
+
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<Movement_Player>().transform;
         shotCooldown = shotCooldownLength;
+        aSource = GetComponent<AudioSource>();
     }
 
     private void Update() {
@@ -74,6 +80,9 @@ public class Movement_Enemy : MonoBehaviour
             }
 
             shotCooldown = shotCooldownLength;
+            aSource.clip = enemyShootEffect;
+            aSource.volume = .5f;
+            aSource.Play();
         }
         
     }
