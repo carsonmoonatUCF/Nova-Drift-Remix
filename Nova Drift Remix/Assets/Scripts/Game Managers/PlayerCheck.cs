@@ -10,5 +10,11 @@ public class PlayerCheck : MonoBehaviour
         if(player){
             Destroy(player);
         }
+
+        GameObject playerUI = FindObjectOfType<HealthBars>().gameObject;
+
+        if(playerUI){
+            Destroy(playerUI);
+        }
     }
 }
