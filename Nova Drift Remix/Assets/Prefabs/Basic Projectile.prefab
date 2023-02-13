@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301b63d4ba9cf604498b7d315e1dcf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 1
+  distance: 1.4
   delay: 0.2
   spriteRen: {fileID: 8581992332975585970}
 --- !u!212 &-3329585680731476463

@@ -31,11 +31,17 @@ public class Movement_Player : MonoBehaviour
     public float shotCooldown = 0.0f;
     private float cooldown = 0.0f;
 
+    // Sounds
+    [Header("Sound Effects")]
+    public AudioClip playerShootEffect = null;
+    private AudioSource aSource = null;
+
 
     // Get components at runtime.
     private void Awake() {
         inputPlayer = GetComponent<Input_Player>();
         rb = GetComponent<Rigidbody2D>();
+        aSource = GetComponent<AudioSource>();
     }
 
     // Run functions
@@ -90,6 +96,9 @@ public class Movement_Player : MonoBehaviour
     private void CreateProjectile(){
         GameObject currentProjectile = Instantiate(projectile, shotPoint.position, shotPoint.rotation);
         currentProjectile.GetComponent<Damage_Projectile>().SetDamage(projectileDamage);
+        aSource.clip = playerShootEffect;
+        aSource.volume = .3f;
+        aSource.Play();
     }
     
 }

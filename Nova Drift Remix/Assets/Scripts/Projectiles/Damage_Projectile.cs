@@ -21,13 +21,18 @@ public class Damage_Projectile : MonoBehaviour
     // Determines what the projectile is hitting.
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.transform.CompareTag("Cookie")){
+            
             other.GetComponent<Health_Cookie>().TakeDamage(damage);
 
             other.GetComponent<Rigidbody2D>().AddForce((other.transform.position - transform.position) * pushForce, ForceMode2D.Impulse);
         }else if(other.transform.CompareTag("Enemy")){
+
             other.GetComponent<Health_Enemy>().TakeDamage(damage);
 
             other.GetComponent<Rigidbody2D>().AddForce((other.transform.position - transform.position) * pushForce, ForceMode2D.Impulse);
+        }else if(other.CompareTag("Weak Point")){
+
+            other.GetComponentInParent<Health_Boss>().TakeDamage(damage);
         }
 
         Destroy(this.gameObject);
