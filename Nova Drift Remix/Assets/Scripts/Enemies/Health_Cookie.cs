@@ -21,6 +21,9 @@ public class Health_Cookie : MonoBehaviour
     public float crumbSpeed = 0.0f;
     public float crumbTorque = 0.0f;
 
+    // Cookie Explosion
+    public GameObject cookieExplosion = null;
+
 
     private void Awake() {
         cookieCol = GetComponent<CircleCollider2D>();
@@ -59,6 +62,8 @@ public class Health_Cookie : MonoBehaviour
             crumbs[i].transform.parent = null;
         }
 
+        GameObject explosion = Instantiate(cookieExplosion, transform.position, transform.rotation);
+        Destroy(explosion, 4f);
         Destroy(this.gameObject);
     }
 }

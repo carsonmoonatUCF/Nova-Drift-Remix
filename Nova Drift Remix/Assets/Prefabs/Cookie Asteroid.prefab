@@ -90,6 +90,7 @@ MonoBehaviour:
   crumbs: []
   crumbSpeed: 0
   crumbTorque: 0
+  cookieExplosion: {fileID: 0}
 --- !u!1 &511699266935660685
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +458,7 @@ MonoBehaviour:
   - {fileID: 505071186564300636}
   crumbSpeed: 0.5
   crumbTorque: 0.2
+  cookieExplosion: {fileID: 3308923186167824016, guid: ed58963f895e1ca4e8583803d02e5337, type: 3}
 --- !u!1 &4764615495738140758
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +633,7 @@ MonoBehaviour:
   crumbs: []
   crumbSpeed: 0
   crumbTorque: 0
+  cookieExplosion: {fileID: 0}
 --- !u!1 &6036515922361539898
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +808,7 @@ MonoBehaviour:
   crumbs: []
   crumbSpeed: 0
   crumbTorque: 0
+  cookieExplosion: {fileID: 0}
 --- !u!1 &8662855486344786307
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,3 +899,4 @@ MonoBehaviour:
   crumbs: []
   crumbSpeed: 0
   crumbTorque: 0
+  cookieExplosion: {fileID: 0}

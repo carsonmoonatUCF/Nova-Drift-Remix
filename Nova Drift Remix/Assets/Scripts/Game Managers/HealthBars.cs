@@ -20,6 +20,8 @@ public class HealthBars : MonoBehaviour
     // Get player script on awake.
     private void Awake() {
         playerHealth = FindObjectOfType<Health_Player>();
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update shield and chassis display.

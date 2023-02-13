@@ -22,11 +22,18 @@ public class Health_Player : MonoBehaviour
     public float regenTimerLength = 0.0f;
     [SerializeField] private float regenTimer = 0.0f;
 
+    // Sounds
+    [Header("Sound Effects")]
+    public AudioClip playerTakeDamage = null;
+    private AudioSource aSource = null;
+
 
     // Set shield and health points to max
     private void Awake() {
         shieldPoints = maxShieldPoints;
         chassisPoints = maxChassisPoints;
+
+        aSource = GetComponent<AudioSource>();
     }
 
     // Update regen timer
@@ -50,6 +57,8 @@ public class Health_Player : MonoBehaviour
     // On taking damage...
     public void TakeDamage(float amount){
         regenTimer = regenTimerLength;
+        aSource.clip = playerTakeDamage;
+        aSource.Play();
 
         if(shieldPoints > 0.0f){
             ApplyDamage(amount, 1);
