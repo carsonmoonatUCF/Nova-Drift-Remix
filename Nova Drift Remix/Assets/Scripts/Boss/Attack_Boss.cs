@@ -47,6 +47,7 @@ public class Attack_Boss : MonoBehaviour
 
         if(!bossHealth.GetAngry())
             attackCooldown -= Time.deltaTime;
+
     }
 
     private void RegularAttack(){

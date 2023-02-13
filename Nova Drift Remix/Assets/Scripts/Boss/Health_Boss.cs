@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Handles boss health and switches to angry when taken enough damage.
 
@@ -38,11 +39,13 @@ public class Health_Boss : MonoBehaviour
             SwitchToAngry();
         }
 
+    //load win screen 
         if(currentHealth <= 0){
             GameObject explosion = Instantiate(bossExplosion, transform.position, transform.rotation);
             Destroy(explosion, 4f);
 
             Destroy(this.gameObject);
+            SceneManager.LoadScene(2);
         }
     }
 
