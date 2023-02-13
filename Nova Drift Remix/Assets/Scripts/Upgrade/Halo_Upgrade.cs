@@ -38,6 +38,7 @@ public class Halo_Upgrade : MonoBehaviour
         damageCooldown -= Time.deltaTime;
 
         transform.position = player.position;
+        transform.parent = player;
     }
 
     private void OnTriggerStay2D(Collider2D other) {
